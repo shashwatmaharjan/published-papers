@@ -9,7 +9,6 @@ from mat73 import loadmat
 from scipy.io import savemat
 from sklearn.model_selection import train_test_split
 
-
 # Define necessary functions
 # Get the generated raw data
 def get_data(fileDirectory, fileName):
