@@ -1,9 +1,9 @@
-%ISELLIPSE    This program checks whether a point (x,y) lies inside,outside
+% ISELLIPSE    This program checks whether a point (x,y) lies inside,outside
 %            or on a ellipse defined by centre at (h,k) and major axis a,
 %            minor axis b. and with an angle A with x axis.
-% 
+%
 %   Syntax: iscircle(h,k,a,b,A)
-%           
+%
 %           Program checks whether point (x,y) lies inside,outside or on the ellipse.
 %           ans = 1  ==> lie on the ellipse.
 %           ans > 1  ==> lie outside the ellipse.

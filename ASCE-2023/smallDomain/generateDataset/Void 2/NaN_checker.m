@@ -1,6 +1,4 @@
-% load('Signal_data_RK.mat')
 load('Signal_ani_void_1_1.mat')
-% load('Crack_data_void_1.mat')
 
 for i= 1: length(um_history)
      for sensors= 1:41
@@ -29,8 +27,5 @@ end
 
 for i= length(delete):-1:1
     um_history(delete(i,1),:)= [];
-%     Crack_data_yes_no_1(delete(i,1),:)= [];
+    
 end
-
-% save('Crack_data_void_1.mat','Crack_data_yes_no_1')
-% save('Signal_data_ricker.mat','um_history')

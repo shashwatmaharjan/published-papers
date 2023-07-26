@@ -282,32 +282,31 @@ for layer = 1:(number_of_layers+inclusions) %number_of_layers
         
         for local_row = 1:9
             for local_col = 1:9
-                %from EK_xx
+                
+                % From EK_xx
                 global_row = Connectivity(e,local_row );
                 global_col = Connectivity(e,local_col );
                 GK(global_row,global_col) = GK(global_row,global_col) + EK_xx{1, layer}(local_row,local_col);
                 
-                %from EK_xy
+                % From EK_xy
                 global_row = Connectivity(e,local_row );
                 global_col = Connectivity(e,local_col )+ N_Node ;
                 GK(global_row,global_col) = GK(global_row,global_col) + EK_xy{1, layer}(local_row,local_col);
                 
-                %from EK_yx
+                % From EK_yx
                 global_row = Connectivity(e,local_row )+ N_Node;
                 global_col = Connectivity(e,local_col );
                 GK(global_row,global_col) = GK(global_row,global_col) + EK_yx{1, layer}(local_row,local_col);
                 
-                %from EK_yy
+                % From EK_yy
                 global_row = Connectivity(e,local_row)+ N_Node;
                 global_col = Connectivity(e,local_col)+ N_Node;
                 GK(global_row,global_col) = GK(global_row,global_col) + EK_yy{1, layer}(local_row,local_col);
             end
         end
     end
-    
-    
+     
 end
-
 
 %%
 GC = sparse(N_DOF,N_DOF);
