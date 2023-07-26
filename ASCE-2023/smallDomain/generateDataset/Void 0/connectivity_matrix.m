@@ -11,11 +11,11 @@ for i = 1:(NV)
         y_coord_ele(e) = (i-1)*h + h/2 ;   %y-coordinate of center of each element
         if (j == 1)
             Connectivity(e,1) = (2*(i-1)) * (2*NH+1)+1;
-            Connectivity(e,2) = Connectivity(e,1)+1; 
-            Connectivity(e,3) = Connectivity(e,2)+1;           
+            Connectivity(e,2) = Connectivity(e,1)+1;
+            Connectivity(e,3) = Connectivity(e,2)+1;
             Connectivity(e,4) = (2*i-1)  * (2*NH+1)+1;
             Connectivity(e,5) = Connectivity(e,4)+1;
-            Connectivity(e,6) = Connectivity(e,5)+1;            
+            Connectivity(e,6) = Connectivity(e,5)+1;
             Connectivity(e,7) = (2*i) * (2*NH+1)+1;
             Connectivity(e,8) = Connectivity(e,7)+1;
             Connectivity(e,9) = Connectivity(e,8)+1;
