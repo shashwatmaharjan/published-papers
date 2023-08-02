@@ -84,7 +84,7 @@ Count_Inclusions = 'N';
 [GK,GM,GC] = building_matrices_hetero_void2 (Connectivity,Count_Inclusions);
 
 %% RANDOMIZER
-N_iteration = 50;                                    % Iterations in the randomizer1
+N_iteration = 1;                                    % Iterations in the randomizer
 void_data= zeros(N_iteration,N_Ele);      % Save location of crack in each iteration
 
 for iter = 1:N_iteration                            % For loop for randomizer
