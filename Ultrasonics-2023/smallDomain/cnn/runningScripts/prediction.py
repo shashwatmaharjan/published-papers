@@ -21,8 +21,8 @@ def clear_screen():
 # Define function to get the saved trained model
 def get_model(file_directory):
 
-    # return models.load_model(file_directory + '/trainedCNNModel.h5')
-    return models.load_model(file_directory + '/bestTrainedCNNModel.h5')
+    return models.load_model(file_directory + '/trainedCNNModel.h5')
+    # return models.load_model(file_directory + '/bestTrainedCNNModel.h5')
 
 # Define function to get data for specific voids
 def get_data(file_directory, void_number):
@@ -182,21 +182,6 @@ def plot_prediction(void_number, target_data, predicted_data, accuracy, precisio
             print("Accuracy: %.2f, Precision: %.2f, Recall: %.2f, F1-score: %.2f" %(accuracy[i]*100, precision[i]*100, recall[i]*100, f1_score[i]*100))
 
             return actual_plot, predicted_plot
-        
-            # worst_plot, (ax1, ax2) = plt.subplots(2, 1, constrained_layout = True)
-            # axlist = [ax1, ax2]
-            # subfig1 = ax1.imshow(target_data[i, :, :], cmap='binary', origin='lower', vmin=0, vmax=1)
-            # ax1.set_title(type + " Actual")
-            # subfig2 = ax2.imshow(predicted_data[i, :], cmap='binary', origin='lower', vmin=0, vmax=1)
-            # ax2.set_title(type + " Prediction")
-            # # worst_plot = plt.colorbar()
-            # worst_plot.colorbar(subfig1, ax=axlist)
-            # # worst_plot.ax.tick_params(labelsize=FONT_SIZE)
-            # plt.savefig(file_directory + '/' + type.lower() + '_void_' + void_number + '.pdf', bbox_inches='tight')
-            # print("Accuracy: %.2f, Precision: %.2f, Recall: %.2f, F1-score: %.2f" %(accuracy[i]*100, precision[i]*100, recall[i]*100, f1_score[i]*100))
-
-            # return worst_plot
-
 
 # Define a main function
 def main():
@@ -249,9 +234,6 @@ def main():
         actual_worst_plot, predicted_worst_plot = \
             plot_prediction(void_number, void_data, probabilistic_predicted_data, accuracy, precision, recall, f1_score, file_directory_to_save_data, 'Worst')
         
-        # best_plot = plot_prediction(void_number, void_data, probabilistic_predicted_data, accuracy, precision, recall, f1_score, file_directory_to_save_data, 'Best')
-        # worst_plot = plot_prediction(void_number, void_data, probabilistic_predicted_data, accuracy, precision, recall, f1_score, file_directory_to_save_data, 'Worst')
-
     plt.show()
 
 if __name__ == '__main__':
