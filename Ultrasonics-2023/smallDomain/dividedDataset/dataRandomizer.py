@@ -2,10 +2,10 @@
 import numpy as np
 import mat4py
 import scipy
-
-from scipy.io import savemat
 import matplotlib.pyplot as plt
 import os
+
+from scipy.io import savemat
 
 # Define necessary function
 # Define function to clear terminal window

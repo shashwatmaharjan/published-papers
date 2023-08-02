@@ -2,10 +2,10 @@
 import numpy as np
 import mat4py
 import scipy
-
-from scipy.io import savemat
 import matplotlib.pyplot as plt
 import os
+
+from scipy.io import savemat
 
 # Define necessary function
 # Define function to clear terminal window
@@ -16,33 +16,6 @@ def clear_screen():
 def get_void_data(file_directory, void_number):
 
     print("\nReceiving data from void %c..." %(void_number))
-
-    # if void_number != "1":
-    #     print("Retrieving Displacement data...")
-    #     displacement_data = mat4py.loadmat(file_directory + '/Void' + void_number + '/Signal_data.mat')
-    #     displacement_data = np.array(tuple(displacement_data.values()))[0]
-
-    #     num_samples = np.shape(displacement_data)[0]
-    #     num_sensors = np.shape(displacement_data)[2]
-    #     num_timesteps = np.shape(displacement_data)[3]
-
-    #     displacement_data = displacement_data.reshape(num_samples, num_sensors, num_timesteps)
-
-    #     print("Retrieving Void data...")
-    #     void_data = mat4py.loadmat(file_directory + '/Void' + void_number + '/Void_data.mat')
-    #     void_data = np.array(tuple(void_data.values()))
-
-    #     num_dimensions = np.shape(void_data)[2]
-    #     void_data = void_data.reshape(num_samples, num_dimensions)
-    
-    # elif void_number == "1":
-    #     print("Retrieving Displacement data...")
-    #     displacement_data = scipy.io.loadmat(file_directory + '/Void ' + void_number + '/Signal_data.mat')
-    #     displacement_data = displacement_data["um_history"]
-
-    #     print("Retrieving Void data...")
-    #     void_data = scipy.io.loadmat(file_directory + '/Void ' + void_number + '/Void_data.mat')
-    #     void_data = void_data["void_data"]
 
     print("Retrieving Displacement data...")
     displacement_data = scipy.io.loadmat(file_directory + '/Void' + void_number + '/Signal_data.mat')
