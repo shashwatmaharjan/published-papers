@@ -99,9 +99,9 @@ def main():
     print("Running dataRandomizer.py")
 
     # Assign the file directory as a string to a variable for re-usability
-    main_file_directory = '/media/swimlab/8e0a5339-75ae-4b57-aaae-375e5bb09ac3/ML_Projects/anisotropic/iteration3/dataset'
+    main_file_directory = 'YOUR_FILE_DIRECTORY_HERE'
     raw_data_file_directory = main_file_directory + '/rawDataset'
-    file_directory_to_save_data = main_file_directory + '/randomizedDataset'
+    file_directory_to_save_data = main_file_directory + '/organizedDataset'
 
     # Get displacement and void data 
     displacement_data_void_0, void_data_void_0 = get_void_data(raw_data_file_directory, '0')
