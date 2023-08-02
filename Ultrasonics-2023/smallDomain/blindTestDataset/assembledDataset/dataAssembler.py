@@ -74,7 +74,7 @@ def main():
     print("Running dataRandomizer.py\n")
 
     # Assign the file directory as a string to a variable for re-usability
-    main_file_directory = '/media/swimlab/8e0a5339-75ae-4b57-aaae-375e5bb09ac3/ML_Projects/anisotropic/iteration4/blindTestDataset'
+    main_file_directory = 'YOUR_FILE_DIRECTORY_HERE'
     raw_data_file_directory = main_file_directory + '/rawDataset'
     file_directory_to_save_data = main_file_directory + '/assembledDataset'
 
