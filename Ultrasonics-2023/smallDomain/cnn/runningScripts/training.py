@@ -177,7 +177,7 @@ def main():
 
     # Assign the file directory as a string to a variable for re-usability
     main_file_directory = 'YOUR_FILE_DIRECTORY_HERE'
-    randomized_data_file_directory = main_file_directory + '/dataset/divideddDataset'
+    randomized_data_file_directory = main_file_directory + '/dataset/dividedDataset'
     file_directory_to_save_results = main_file_directory + '/cnn/trainingResults'
 
     # Get displacement and void data 
