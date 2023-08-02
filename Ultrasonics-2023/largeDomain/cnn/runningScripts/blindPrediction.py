@@ -119,10 +119,10 @@ def main():
 
     # Clear screen before startup
     clear_screen()
-    print("Running blindPrediction.py")
+    print('Running blindPrediction.py')
 
     # Assign the file directory as a string to a variable for re-usability
-    main_file_directory = "/media/swimlab/8e0a5339-75ae-4b57-aaae-375e5bb09ac3/ML_Projects/anisotropic/iteration2"
+    main_file_directory = '/media/swimlab/8e0a5339-75ae-4b57-aaae-375e5bb09ac3/ML_Projects/anisotropic/iteration2'
     organized_data_file_directory = main_file_directory + '/dataset/organizedDataset'
     blind_test_data_file_directory = main_file_directory + '/blindTestDataset/assembledDataset'
     trained_results_file_directory = main_file_directory + '/CNN/trainingResults'
@@ -157,7 +157,7 @@ def main():
         sample_number = n_sample+1
         plot = plot_prediction(sample_number, probabilistic_predicted_data, file_directory_to_save_data)
 
-        print("Accuracy = %0.2f, Precision = %0.2f, Recall = %0.2f, F1-score = %0.2f" %(accuracy[n_sample]*100, precision[n_sample]*100, recall[n_sample]*100, f1_score[n_sample]*100))
+        print('Accuracy = %0.2f, Precision = %0.2f, Recall = %0.2f, F1-score = %0.2f' %(accuracy[n_sample]*100, precision[n_sample]*100, recall[n_sample]*100, f1_score[n_sample]*100))
 
     # plt.show()
 

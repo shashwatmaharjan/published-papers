@@ -145,7 +145,7 @@ def plot_prediction(void_number, target_data, predicted_data, accuracy, precisio
     elif type == 'Worst':
         comparison_metric = np.min(chosen_metric)
     
-    print("%s prediction:" %(type))
+    print('%s prediction:' %(type))
 
     for i in range(chosen_metric.shape[0]):
 
@@ -179,7 +179,7 @@ def plot_prediction(void_number, target_data, predicted_data, accuracy, precisio
             cb = plt.colorbar(im2, cax=cax)
             cb.ax.tick_params(labelsize=FONT_SIZE)
             plt.savefig(file_directory + '/void_' + void_number + '_' + type.lower() + '_predicted.pdf', bbox_inches='tight')
-            print("Accuracy: %.2f, Precision: %.2f, Recall: %.2f, F1-score: %.2f" %(accuracy[i]*100, precision[i]*100, recall[i]*100, f1_score[i]*100))
+            print('Accuracy: %.2f, Precision: %.2f, Recall: %.2f, F1-score: %.2f' %(accuracy[i]*100, precision[i]*100, recall[i]*100, f1_score[i]*100))
 
             return actual_plot, predicted_plot
 
@@ -188,10 +188,10 @@ def main():
 
     # Clear screen before startup
     clear_screen()
-    print("Running prediction.py")
+    print('Running prediction.py')
 
     # Assign the file directory as a string to a variable for re-usability
-    main_file_directory = "/media/swimlab/8e0a5339-75ae-4b57-aaae-375e5bb09ac3/ML_Projects/anisotropic/iteration4"
+    main_file_directory = '/media/swimlab/8e0a5339-75ae-4b57-aaae-375e5bb09ac3/ML_Projects/anisotropic/iteration4'
     organized_data_file_directory = main_file_directory + '/dataset/organizedDataset'
     trained_results_file_directory = main_file_directory + '/CNN/trainingResults'
     file_directory_to_save_data = main_file_directory + '/CNN/predictionResults/testData'
@@ -214,7 +214,7 @@ def main():
     # Predict using the trained model
     probabilistic_predicted_data, exact_predicted_data = predict_from_data(model, displacement_test_data_normalized, threshold = 0.4)
     
-    if void_number != "0":
+    if void_number != '0':
 
         # Get the four classficationmetrics after prediction
         accuracy, precision, recall, f1_score = metrics_calculator(target_data = void_data, predicted_data = exact_predicted_data)
@@ -223,7 +223,7 @@ def main():
     void_data = np.reshape(void_data, (np.shape(void_data)[0], 50, 100))
     probabilistic_predicted_data = np.reshape(probabilistic_predicted_data, (np.shape(probabilistic_predicted_data)[0], 50, 100))
 
-    if void_number == "0":
+    if void_number == '0':
         actual_plot, predicted_plot = plot_void_0(void_data, probabilistic_predicted_data, file_directory_to_save_data)
     
     else:
