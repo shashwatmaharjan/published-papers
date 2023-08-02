@@ -122,11 +122,11 @@ def main():
     print('Running blindPrediction.py')
 
     # Assign the file directory as a string to a variable for re-usability
-    main_file_directory = '/media/swimlab/8e0a5339-75ae-4b57-aaae-375e5bb09ac3/ML_Projects/anisotropic/iteration4'
-    organized_data_file_directory = main_file_directory + '/dataset/organizedDataset'
+    main_file_directory = 'YOUR_FILE_DIRECTORY_HERE'
+    organized_data_file_directory = main_file_directory + '/dataset/dividedDataset'
     blind_test_data_file_directory = main_file_directory + '/blindTestDataset/assembledDataset'
-    trained_results_file_directory = main_file_directory + '/CNN/trainingResults'
-    file_directory_to_save_data = main_file_directory + '/CNN/predictionResults/blindTestData'
+    trained_results_file_directory = main_file_directory + '/cnn/trainingResults'
+    file_directory_to_save_data = main_file_directory + '/cnn/predictionResults/blindTestData'
 
     # Get the trained CNN model
     model = get_model(trained_results_file_directory)
