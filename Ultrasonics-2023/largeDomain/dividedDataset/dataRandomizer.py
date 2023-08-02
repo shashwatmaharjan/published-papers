@@ -18,11 +18,11 @@ def get_void_data(file_directory, void_number):
     print("\nReceiving data from void %c..." %(void_number))
 
     print("Retrieving Displacement data...")
-    displacement_data = scipy.io.loadmat(file_directory + '/Void' + void_number + '/Signal_data.mat')
+    displacement_data = scipy.io.loadmat(file_directory + '/Void' + void_number + '/signal_data.mat')
     displacement_data = displacement_data["signalData"]
 
     print("Retrieving Void data...")
-    void_data = scipy.io.loadmat(file_directory + '/Void' + void_number + '/Void_data.mat')
+    void_data = scipy.io.loadmat(file_directory + '/Void' + void_number + '/void_data.mat')
     void_data = void_data["voidData"]
 
     return displacement_data, void_data
