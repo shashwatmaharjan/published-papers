@@ -10,7 +10,7 @@ global number_of_layers; global number_of_inclusions
 global e_all; global e_pml; global ei; global Lpml; global Ele; global Li; global N_Node_aux;
 global xy_coord_node; global N_iteration;
 global N_void; global Eli_fea; global xRotated_total; global yRotated_total;
-global weight_total; global Crack_data_yes_no_1;
+global weight_total; global void_data;
 global EK_xx; global EK_xy; global EK_yx; global EK_yy; global EM_xx; global EM_yy;
 global Layer_length;
 mkdir('graphs_u');
@@ -90,7 +90,7 @@ Count_Inclusions = 'N';
 
 %% RANDOMIZER
 N_iteration = 1;                                    % Iterations in the randomizer1
-Crack_data_yes_no_1= zeros(N_iteration,N_Ele);      % Save location of crack in each iteration
+void_data= zeros(N_iteration,N_Ele);      % Save location of crack in each iteration
 
 for iter = 1:N_iteration                            % For loop for randomizer
     %% Void features:
@@ -240,12 +240,12 @@ for iter = 1:N_iteration                            % For loop for randomizer
         break
     end
     %%
-    um_history{iter,1}= um;
+    signal_data{iter,1}= um;
     
     Eli_fea_history{iter,1} = Eli_fea;              %if needed
     
     
-    test_avg= nonzeros(Crack_data_yes_no_1(iter,:));
+    test_avg= nonzeros(void_data(iter,:));
     weight_avg= length(test_avg);
     Crack_per_iteration(iter,1)= weight_avg;
     
@@ -257,13 +257,13 @@ end                                     %end of loop iteration
 %% After all the iterations - let's save the data
 Average_crack_element = round(mean(Crack_per_iteration));
 for x= 1: N_Ele
-    test= nonzeros(Crack_data_yes_no_1(:,x));
+    test= nonzeros(void_data(:,x));
     weight_total= length(test);
     Crack_data_total(1,x)= weight_total;
 end
 crack_percentage= round((Average_crack_element/N_Ele)*100)
-save('Crack_data_void_0.mat','Crack_data_yes_no_1')
-save('Signal_ani_void_0.mat','um_history')
+save('void_data.mat','void_data')
+save('signal_data.mat','signal_data')
 
 %%
 cdata=[];
